@@ -44,13 +44,19 @@ class App extends Component {
     const imgWidth = this.state.sliderValue;
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <Slider className="slider" min={10} max={400} defaultValue={250} onChange={(val) => this.handleSliderChange(val)}/>
+      <div>
+        <div className="App">
+          <div className="App-header">
+            <Slider className="slider" min={50} max={600} defaultValue={400} onChange={(val) => this.handleSliderChange(val)}/>
+          </div>
         </div>
-        <div className="App-content">
+        <div style={{width: '200px', float: 'left'}}>
           <MenuList className="menu-list" items={imgSources} />
-          <ImageList imgSources={imgSources} imgWidth={imgWidth}/>
+        </div>
+        <ImageList imgSources={imgSources} imgWidth={imgWidth}/>
+        <div>
+          <div className="App-content">
+          </div>
         </div>
       </div>
     );

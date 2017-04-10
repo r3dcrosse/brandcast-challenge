@@ -24,18 +24,18 @@ class MenuList extends Component {
   render() {
 
     return (
-      <div>
+      <ul className="menu-list">
         {
           this.state.menuItems.map((menuItem) => {
             return (
-            <div className="menu-list-item">
+            <li className="menu-list-item">
               <div>{menuItem}</div>
               <div>2013 - 2017</div>
-            </div>
+            </li>
             )
           })
         }
-      </div>
+      </ul>
     )
   }
 }
