@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../App.css';
 class ImageList extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +33,7 @@ class ImageList extends Component {
       <div>
         {
           this.state.imgSources.map((anImage) => {
-            console.log(anImage)
-            return <img style={imgStyle} src={anImage} key={anImage} alt={anImage} />
+            return <img className="image-list-item" style={imgStyle} src={anImage} key={anImage} alt={anImage} />
           })
         }
       </div>

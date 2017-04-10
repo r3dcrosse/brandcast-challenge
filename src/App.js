@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import ImageList from './components/ImageList.jsx';
+import MenuList from './components/MenuList.jsx';
 import './App.css';
 
 var imageAssets = []
@@ -29,7 +30,7 @@ class App extends Component {
   }
 
   handleSliderChange(sliderValue) {
-    console.log(sliderValue);
+    // console.log(sliderValue);
     if (sliderValue !== undefined) {
       this.setState({
         sliderValue: sliderValue
@@ -45,9 +46,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <Slider min={10} max={400} defaultValue={250} onChange={(val) => this.handleSliderChange(val)}/>
+          <Slider className="slider" min={10} max={400} defaultValue={250} onChange={(val) => this.handleSliderChange(val)}/>
         </div>
-        <ImageList className="App-intro" imgSources={imgSources} imgWidth={imgWidth}/>
+        <div className="App-content">
+          <MenuList className="menu-list" items={imgSources} />
+          <ImageList imgSources={imgSources} imgWidth={imgWidth}/>
+        </div>
       </div>
     );
   }
